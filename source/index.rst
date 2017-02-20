@@ -8,11 +8,21 @@ gvSIG Documentation (EN)
 
 .. toctree::
    :hidden:
-   :glob:
 
    developers_quick_start/2.2/index.rst
    user_manual/2.2/index.rst
-   
+   scripting_devel_guide/2.3/index.rst
+
+gvSIG 2.3
+---------
+
+* `Scripting Documentation`_
+* `User Manual 2.3`_
+
+.. _User Manual 2.3: user_manual/2.3/index.html
+.. _Scripting Documentation: scripting_devel_guide/2.3/index.html
+
+
 gvSIG 2.2
 ---------
    

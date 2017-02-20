@@ -1,0 +1,251 @@
+﻿Working with layers: FLayer
+============================
+
+Working with layers :javadoc:`FLayer <FLayer>`
+
+
+.. py:function:: createShape(definition, [filename=None, geometryType=None, CRS=None, prefixname="tmpshp"])
+
+    Creates a new shape layer. If geometryType is None, will take geometry type from the definition. If parameter geometryType and the geometry type inside the definition are different, raises an error.
+
+    :param definition: Layer schema
+	:type definition: DefaultFeatureType
+    :param str filename: Full path
+    :param geometryType: 
+	:type geometryType: GeometryType
+    :param str CRS: CRS Code
+	:param str prefixname: first part of the temp name
+
+The FLayer interface is implemented in several layers commonly used like vectorial layers or raster.
+
+Vectorial layers: FLyrVect
+---------------------------
+
+One of the most important operations is to work with vectorial layers :javadoc:`FLyrVect <FLyrVect>`. We have wanted to simplify this work how much we can, especially if you are a new developer.  
+
+We have already seen generation schemas who can be used in vectorial layers. The only condition for those schemas is they must contain a field ``GEOMETRY`` with an stablish geometry type.
+
+Create vectorial layer
+++++++++++++++++++++++
+
+For generation of layers we have simplified to the max the function :py:func:``createShape(definition)``. The only mandatory parameter will be the layer schema with his geometry field.
+
+For example, the min request for create a layer is::
+
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get("GEOMETRY").setGeometryType(POINT, D2)
+		shape = createShape(schema)
+                        
+So, if the file path or name is not important to us, something very common in generating layers from geoprocessing results or the like, the function will assign the path to a temporary folder and a random name (based on timecode).
+
+other manner would be directly use function `createLayer()`::
+
+        layer = createLayer(schema=schema,
+                            servertype="FilesystemExplorer",
+                            layertype="Shape",
+                            shpFile="/home/osc/temp/test1.shp",
+                            CRS="EPSG:25830",
+                            geometryType=geom.POINT
+                            )
+
+Thus in previous script we could add the lines:: 
+
+    print "Name: ", shape.getName()
+    print "Path: ", shape.getDataStore().getFullName()
+
+Resulting the layer name and path, as follow::
+
+	Name:  tmpshp-57afa1381035
+	Path:  C:\Users\Oscar\AppData\Local\Temp\tmp-andami\tmpshp-57afa1381035.shp
+	
+If you need to create several layers and you need differenciate them, e.g., by linking a series of operations, we can establish the `` prefixname`` which modify the first part of the name, but will continue to create all other temporary route and making sure it will be a unique name ::
+
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get("GEOMETRY").setGeometryType(POINT, D2)
+		shape1 = createShape(schema, prefixname="results")
+		shape2 = createShape(schema, prefixname="errors")
+		shape3 = createShape(schema, prefixname="dots")
+		
+		print "Name: ", shape1.getName(), "\tPath: ", shape1.getDataStore().getFullName() 
+		print "Name: ", shape2.getName(), "\tPath: ", shape2.getDataStore().getFullName()
+		print "Name: ", shape3.getName(), "\tPath: ", shape3.getDataStore().getFullName()
+
+Console displays the name of the layer as indicated::
+
+	Nombre:  results-57afa4f612c9 	Ruta:  C:\Users\Oscar\AppData\Local\Temp\tmp-andami\results-57afa4f612c9.shp
+	Nombre:  errors-57afa4f613a6 	Ruta:  C:\Users\Oscar\AppData\Local\Temp\tmp-andami\errors-57afa4f613a6.shp
+	Nombre:  dots-57afa4f61446 	Ruta:  C:\Users\Oscar\AppData\Local\Temp\tmp-andami\dots-57afa4f61446.shp
+	
+Modify schema of a layer
+++++++++++++++++++++++++
+
+The following script will modify the schema of a layer. For this propose we need to create a new schema based on previous layer through ``createFeatureType(layer_schema)``, do the modifications and to update the layer::
+
+	from gvsig import *
+	from gvsig import geom
+
+	def main(*args):
+		"""Updating schema of existent layer"""
+		
+		layer = currentLayer()
+		
+		schema = layer.getSchema()
+		newschema = createSchema(schema)
+		newschema.append("ID2", "STRING")
+		
+		layer.edit()
+		layer.update(newschema)
+		layer.commit()
+
+Operations with features
+++++++++++++++++++++++++
+
+Once has been created the new layer or accesing an already existing with ``currentLayer()`` o ``view.getLayer("Name")``, we can acces his features through ``.features()``, as explained in data Acces Guide.
+
+The next thing we will do is add data to this vector layer. Thus we put the layer in edition mode with ``layer.edit()`` then adds the features with ``layer.append(args)``::
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("ID", "INTEGER", 5)
+		schema.append("NAME", "STRING", 10)
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get("GEOMETRY").setGeometryType(POINT, D2)
+		
+		shape = createShape(schema, prefixname="result")
+
+		
+		print "Name: ", shape.getName(), "\tPath: ", shape.getDataStore().getFullName()
+
+		shape.edit()
+		# Setting arguments
+		shape.append(ID=1, NAME="Valencia", GEOMETRY=createPoint2D(10, 10))
+		# Diccionary
+		shape.append({"ID": 2, "NAME": "Paris", "GEOMETRY":createPoint2D(15, 15)})
+		shape.commit()
+
+		currentView().addLayer(shape)
+
+
+Another example for adding features, through the manner we would use in java::
+
+	import gvsig
+	reload(gvsig)
+	from gvsig import *
+	from gvsig import geom
+
+	from org.gvsig.fmap.dal.feature import FeatureStore
+	def main(*args):
+
+		# Creating new layer
+		schema = createSchema()
+		schema.append("ID", "INTEGER")
+		schema.append("NAME", "STRING", 10)
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get('GEOMETRY').setGeometryType(geom.POINT,geom.D2)
+		
+		layer = createShape(schema, prefixname="points_layer")
+
+		# Insert with newfeature
+		store = layer.getFeatureStore()
+		
+		newfeature = store.createNewFeature()
+		newfeature.set("ID",1)
+		newfeature.set("NAME","Feature1")
+		newfeature.set("GEOMETRY", geom.createPoint(geom.D2, 1,2))
+		
+		layer.edit(FeatureStore.MODE_APPEND) #Only for layers recently created
+		store.insert(newfeature)
+		layer.commit()
+
+		# Insert with append
+		layer.edit()
+		layer.append(ID=2,NAME='Feature2',GEOMETRY=geom.createPoint(geom.D2, 5, 3))
+		
+		layer.append({'ID':3,'NAME':'Feature2','GEOMETRY':geom.createPoint(geom.D2, 3, 3)})
+		layer.append({'ID':4,'NAME':'Feature2','GEOMETRY':geom.createPoint(geom.D2, 2, 1)})
+		layer.append({'ID':5,'NAME':'Feature3','GEOMETRY':geom.createPoint(geom.D2, 2, 6)})
+		layer.append({'ID':6,'NAME':'Feature3','GEOMETRY':geom.createPoint(geom.D2, 6, 2)})
+		layer.append({'ID':7,'NAME':'Feature3','GEOMETRY':geom.createPoint(geom.D2, 2, 7)})
+		layer.commit()
+
+		# Add layer to the view
+		currentView().addLayer(layer)
+
+		print "Features info"
+		for l in layer.features():
+			print l
+
+		
+If by the end of the previous script we add the following lines, we see an example for eliminate features::		
+
+
+		features = layer.features("ID < 6") #DefaultFeatureSet
+		
+		layer.edit()
+		print type(layer)
+		print features, type(features)
+		for i in features:
+			features.delete(i)
+
+		layer.commit()
+
+To modify the values of our layer features containing::	
+
+		layer.edit()
+
+		for i in features:
+			print i
+			c = i.getEditable()
+			c.set("NAME", "Modified_4")
+			features.update(c)
+			
+		layer.commit()
+		
+
+You can make copies of entities (features) and to modify them later in its original layer.
+
+E.g.: We extract certain features for a layer who contain Field1 of type Long. Those festures we copied in a list. Then we modify these features and again modify these features over the initial layer::
+
+    from gvsig import *
+
+    def main(*args):
+        layer = currentLayer()
+        features = layer.features('Field1>2',sortBy="Field1",asc=True)
+        list = []
+        for f in features:
+            print f
+            copy = f.getCopy()
+            print type(copy)
+            list.append(copy)
+
+        print len(list)
+        layer.edit()
+        for i in list:
+            value = i.get('Field1')+0.01
+            i = i.getEditable()
+            i.set('Field1', value)
+            print "new value", i.get('Field1'), type(i)
+            featureSet = layer.features()
+            layer.features().update(i)
+        layer.commit()

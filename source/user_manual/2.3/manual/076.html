@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Mluz">
+	<meta name="created" content="20061115;190500000000000">
+	<meta name="changed" content="20170220;155806851000000">
+	<meta name="Info 1" content="">
+	<meta name="Info 2" content="">
+	<meta name="Info 3" content="">
+	<meta name="Info 4" content="">
+	<style type="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 1.95cm; margin-top: 1.27cm; margin-bottom: 1.27cm }
+		@page:first { margin-top: 1.27cm; margin-bottom: 2.5cm }
+		p { margin-top: 0.42cm; margin-bottom: 0cm; background: transparent; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		p.western { font-family: "Myriad Pro", sans-serif; font-size: 10pt; font-weight: normal }
+		p.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: bold }
+		p.ctl { font-family: "Arial", sans-serif; font-size: 12pt; so-language: ar-SA; font-weight: bold }
+		h1 { margin-top: 0.42cm; margin-bottom: 0cm; direction: ltr; text-transform: uppercase; color: #4c4c4c; text-align: left; widows: 2; orphans: 2; page-break-before: always }
+		h1.western { font-family: "Myriad Pro"; font-size: 16pt }
+		h1.cjk { font-family: "Times New Roman", serif; font-size: 16pt }
+		h1.ctl { font-family: "Arial", sans-serif; font-size: 16pt; so-language: ar-SA }
+		h2 { margin-top: 0.4cm; margin-bottom: 0.3cm; direction: ltr; color: #ff950e; text-align: justify; page-break-inside: avoid; widows: 2; orphans: 2; page-break-before: auto }
+		h2.western { font-family: "Myriad Pro"; font-size: 14pt }
+		h2.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		h2.ctl { font-family: "Arial", sans-serif; font-size: 14pt; so-language: ar-SA }
+		a:link { color: #0000ff }
+		a:visited { color: #800080 }
+		a.western:visited { so-language: en-GB }
+		a.cjk:visited { so-language: zxx }
+		a.ctl:visited { so-language: zxx }
+	-->
+	</style>
+</head>
+<body lang="en-GB" text="#000000" link="#0000ff" vlink="#800080" dir="ltr" style="background: transparent">
+<h2 class="western"><a name="__RefHeading__1012_109865959325"></a>76.1.
+Introduction</h2>
+<p class="western"><a name="result_box9"></a>It allows access to both
+Oracle Spatial tables as Oracle Locator (both from version 9i) if
+they have a column of geometries stored as SDO GEOMETRY:type SDO
+geometries stored GEOMETRY.</p>
+<p class="western">The <i>&quot;Oracle Spatial / Locator Support&quot;</i>
+extension is installed using the <i>&quot;Addonn Manager.&quot;</i> <br><br>
+</p>
+<h2 class="western"><a name="__RefHeading__21732_16632809888"></a>76.2.
+Metadata</h2>
+<p class="western"><a name="result_box113"></a>The driver lists only
+tables with their geographic metadata in the USER_SDO_GEOM_METADATA
+view.</p>
+<p class="western">Since it has the metadata for each table, the
+interface makes use of them and automatically provides the geometry
+columns. As row identifier uses the ROWID, which is an unique
+descriptor for each row usied by Oracle internally and ensures
+correct identification.</p>
+<h2 class="western"><a name="__RefHeading__4533_756935438"></a>76.3.
+Data type</h2>
+<ul>
+	<ul>
+		<p class="western" align="left"><a name="result_box211"></a>Data
+		are supported in 2D and 3D of the following types:</p>
+	</ul>
+	<li><p class="western" align="left">Point and multipoint</p>
+	<li><p class="western" align="left">Line and multi-line</p>
+	<li><p class="western" align="left">Polygon and multipolygon</p>
+	<li><p class="western" align="left">Collection</p>
+	<p class="western" align="left">Layers with LRS (Linear Referencing
+	System) format are not supported. 
+	</p>
+</ul>
+<h2 class="western"><a name="__RefHeading__4535_756935438"></a>76.4.
+Coodinate systems</h2>
+<p class="western"><a name="result_box34"></a>Oracle has its own
+cataloging system of coordinate systems and reference. There is a
+relationship of equivalences between the Oracle system and the EPSG
+system that is included in the driver as a DBF file.</p>
+<p class="western">Transformations between coordinate systems are
+performed by gvSIG.</p>
+<h2 class="western"><a name="__RefHeading__4537_756935438"></a>76.5.
+Reading geometries</h2>
+<p class="western" align="left"><a name="result_box41"></a>The driver
+constantly runs geometric queries (ie, calculates at each moment what
+geometries intersect with the current gvSIG view) for which it is
+imperative that exists in the database a spatial index associated
+with the column in question. If there is no index, an error window is
+displayed and is not possible to add such a table or view to the
+gvSIG View.<br>On the other hand, the driver needs to set an unique
+identifier for the records of the table or view, which is not
+possible for certain types of views. In case of this problem, the
+driver will detect it and an error message is also displayed, making
+it impossible to load that view of the database in gvSIG.</p>
+<h2 class="western"><a name="__RefHeading__4539_756935438"></a>76.6.
+Dumping gvSIG layer to Oracle</h2>
+<p class="western">When you export a layer to an Oracle database, at
+the end, the process will ask whether you want to include in the
+table the current coordinate system of the View. 
+</p>
+<p class="western" style="font-variant: normal; font-style: normal; font-weight: normal; text-decoration: none">
+<br>
+</p>
+</body>
+</html>

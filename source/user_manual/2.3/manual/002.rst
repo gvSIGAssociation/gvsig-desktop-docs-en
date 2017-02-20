@@ -1,0 +1,6 @@
+
+Addons Manager
+=============================
+
+.. raw:: html
+    :file: 002.html

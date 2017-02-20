@@ -1,0 +1,6 @@
+
+Catalog of favorites
+=============================
+
+.. raw:: html
+    :file: 084.html

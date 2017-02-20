@@ -1,0 +1,6 @@
+
+Map template
+==================
+
+.. raw:: html
+    :file: 073.html

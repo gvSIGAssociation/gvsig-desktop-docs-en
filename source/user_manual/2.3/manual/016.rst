@@ -1,0 +1,6 @@
+
+Vector layer properties
+=================================
+
+.. raw:: html
+    :file: 016.html

@@ -1,0 +1,6 @@
+
+Add a table
+================
+
+.. raw:: html
+    :file: 060.html

@@ -1,0 +1,189 @@
+﻿Working with schemas: FeatureType
+================================
+
+The descriptors have information about name, type, accuracy,etc from the fields of our data containers.
+
+Depending on its use they must meet some requirements. e.g. if we create a vectorial layer, its scheme have to have a field **GEOMETRY**
+
+
+Create Schema
+-------------
+
+.. py:function:: createFeatureType([schema=None]):
+    
+    Create an empty schema. If parameter schema is a :javadoc:`DefaultEditableFeatureType <DefaultEditableFeatureType>`, creates a copy of this schema :javadoc:`DefaultFeatureType <DefaultFeatureType>`.
+	
+    :param schema: Schema from other layer
+    :type schema: :javadoc:`DefaultEditableFeatureType <DefaultEditableFeatureType>`
+    :return: empty schema or a copy of a schema
+    :type return: DefaultEditableFeatureType
+
+The interface :javadoc:`DataTypes <DataTypes>` specify a group of constant who indicate the kind of supported data for DAL.
+
+We take a look how to create a schema with two fields and assignate them to a new table::
+
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("ID", "INTEGER", 10) 
+		schema.append("NAME", "STRING", 20)
+
+		dbf = createDBF(schema)
+		
+		d = loadDBF( dbf.getFullName()) # Load a table on the project
+
+Also we can create a new schema from already existing one, very useful when we want to make copies of layers. To move an schema for creating layers must be type **DefaultFeatureType**, the function :py:func:``createFeatureType()`` turn the schema type :javadoc:`DefaultEditableFeatureType <DefaultEditableFeatureType>` into the necesary::	
+
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("ID", "INTEGER", 10)
+		schema.append("NAME", "STRING", 20)
+
+		dbf_1 = createDBF(schema)
+		
+		dbf_schema = dbf_1.getSchema() # DefaultEditableFeatureType
+
+		# New schema based on another layer
+		new_schema = createSchema(dbf_schema)
+		new_schema.append("CODE", "STRING", 5)
+		
+		dbf_2 = createDBF(new_schema)
+
+A manner to acces to the descriptors in the schema is through ``schema.get("Campo")``. Also we can iterate over them. In the following example, we see the way to add different fields from diferent types to a new schema. We have made a function who iterate over them to show the complete information about the schema we use like parameter, then::
+
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def showInfoFeatureType(schema):
+		#Show schema
+		attrSchema = schema.getAttrNames()
+		print "Schema attr: ", attrSchema
+		#First field in schema
+		field1 = schema.get(0)
+
+		# Description of the fields
+		print "\nFields description"
+		for field in schema:
+			print " Name: ", field.getName(),
+			print " \tDataTypeName: ", field.getDataTypeName(),
+			print " \tType: ", field.getType(),
+			print " \tSubType: ", field.getSubtype(),
+			print " \tPrecision: ", field.getPrecision(),
+			print " \tSize: ", field.getSize()
+			
+			if field.getDataTypeName() == 'Geometry':
+			  geomType = field.getGeomType()
+			  print " \tGeom Name: ", geomType.getName()
+			  print " \tGeom FullName: ", geomType.getFullName()
+			  print " \tType: ", geomType.getType()
+			  print " \tSubType: ", geomType.getSubType()
+			  print " \tGeometryClass: ", geomType.getGeometryClass()
+			  print " \tDimension: ", geomType.getDimension()
+
+	def main(*args):
+
+		schema = createFeatureType()
+
+		schema.append("ID", "INTEGER", 10)
+		schema.append("NAME", "STRING", 20)
+		schema.append("AREA", "DOUBLE", 20, 10)
+		schema.append("FECHA", "DATE", 20)
+		schema.append("ACTIVE", "BOOLEAN")
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get('GEOMETRY').setGeometryType(POINT, D2)
+
+		shape = createShape(schema, prefixname="date")
+		currentView().addLayer(shape)
+		showInfoFeatureType(schema)
+		
+Console display::
+
+	Schema attr:  [u'ID', u'NAME', u'AREA', u'FECHA', u'ACTIVE', u'GEOMETRY']
+
+	Fields description
+	 Name:  ID  	DataTypeName:  Integer  	Type:  4  	SubType:  None  	Precision:  0  	Size:  10
+	 Name:  NAME  	DataTypeName:  String  	Type:  8  	SubType:  None  	Precision:  0  	Size:  20
+	 Name:  AREA  	DataTypeName:  Double  	Type:  7  	SubType:  None  	Precision:  4  	Size:  20
+	 Name:  FECHA  	DataTypeName:  Date  	Type:  9  	SubType:  Date  	Precision:  0  	Size:  20
+	 Name:  ACTIVE  	DataTypeName:  Boolean  	Type:  1  	SubType:  None  	Precision:  0  	Size:  0
+	 Name:  GEOMETRY  	DataTypeName:  Geometry  	Type:  66  	SubType:  Geometry  	Precision:  0  	Size:  0
+		Geom Name:  Point2D
+		Geom FullName:  Point:2D
+		Type:  1
+		SubType:  0
+		GeometryClass:  <type 'org.gvsig.fmap.geom.jts.primitive.point.Point2D'>
+		Dimension:  2
+
+Modify Schema
+-------------
+
+In the following example, we're going to modify a schema::
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("ID", "INTEGER", 10)
+		schema.append("NAME", "STRING", 20)
+		schema.append("CODE", "STRING", 2)
+		
+		
+		# By index
+		schema.remove(0)
+		print "Remove descriptor ID: ", schema.getAttrNames()
+
+		# By descriptor
+		rm = schema.getEditableAttributeDescriptor("CODE")
+		schema.remove(rm)
+		print "Remove descriptor CODE: ", schema.getAttrNames()
+
+		# Add geometry field
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get("GEOMETRY").setGeometryType(POINT, D2)
+		print "Add geometry field: ", schema.getAttrNames()
+		
+Console display::
+
+	Remove descriptor ID:  [u'NAME', u'CODE']
+	Remove descriptor CODE:  [u'NAME']
+	Add geometry field:  [u'NAME', u'GEOMETRY']
+		
+		
+Schema for vectorial layers
+---------------------------
+
+The creation of a vectorial layer it will be a very similar example, only should contain a field ``GEOMETRY` of type ``GEOMETRY``. After to create this field, we have to stablish the type of geometry will contain.
+
+The following example shows the typical case of creation a new vectorial layer::
+
+	from gvsig import *
+	from gvsig.geom import *
+
+	def main(*args):
+
+		schema = createFeatureType() # DefaultFeatureType
+
+		schema.append("ID", "INTEGER", 10)
+		schema.append("NAME", "STRING", 20)
+		schema.append("GEOMETRY", "GEOMETRY")
+		schema.get("GEOMETRY").setGeometryType(POINT, D2)
+
+		shape = createShape(schema)
+		currentView().addLayer(shape)
+		
+

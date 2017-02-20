@@ -1,0 +1,966 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Mluz">
+	<meta name="created" content="20061115;190500000000000">
+	<meta name="changed" content="20170220;150109551000000">
+	<meta name="Info 1" content="">
+	<meta name="Info 2" content="">
+	<meta name="Info 3" content="">
+	<meta name="Info 4" content="">
+	<style type="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 1.95cm; margin-top: 1.27cm; margin-bottom: 1.27cm }
+		@page:first { margin-top: 1.27cm; margin-bottom: 2.5cm }
+		p { margin-top: 0.42cm; margin-bottom: 0cm; background: transparent; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		p.western { font-family: "Myriad Pro", sans-serif; font-size: 10pt; font-weight: normal }
+		p.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: bold }
+		p.ctl { font-family: "Arial", sans-serif; font-size: 12pt; so-language: ar-SA; font-weight: bold }
+		h1 { margin-top: 0.42cm; margin-bottom: 0cm; direction: ltr; text-transform: uppercase; color: #4c4c4c; text-align: left; widows: 2; orphans: 2; page-break-before: always }
+		h1.western { font-family: "Myriad Pro"; font-size: 16pt }
+		h1.cjk { font-family: "Times New Roman", serif; font-size: 16pt }
+		h1.ctl { font-family: "Arial", sans-serif; font-size: 16pt; so-language: ar-SA }
+		h2 { margin-top: 0.4cm; margin-bottom: 0.3cm; direction: ltr; color: #ff950e; text-align: justify; page-break-inside: avoid; widows: 2; orphans: 2; page-break-before: auto }
+		h2.western { font-family: "Myriad Pro"; font-size: 14pt }
+		h2.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		h2.ctl { font-family: "Arial", sans-serif; font-size: 14pt; so-language: ar-SA }
+		td p { margin-top: 0.42cm; margin-bottom: 0cm; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		td p.western { font-family: "Arial", sans-serif; font-size: 12pt }
+		td p.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+		td p.ctl { font-family: "Arial", sans-serif; font-size: 12pt; so-language: ar-SA }
+		a:link { color: #0000ff }
+		a:visited { color: #800080 }
+		a.western:visited { so-language: en-GB }
+		a.cjk:visited { so-language: zxx }
+		a.ctl:visited { so-language: zxx }
+	-->
+	</style>
+</head>
+<body lang="en-GB" text="#000000" link="#0000ff" vlink="#800080" dir="ltr" style="background: transparent">
+<h2 class="western"><a name="__RefHeading__6004_280754199"></a>13.1.
+File</h2>
+<p class="western">Informative table of the file formats supported by
+gvSIG:</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="51*">
+	<col width="51*">
+	<col width="36*">
+	<col width="36*">
+	<col width="82*">
+	<tr valign="top">
+		<td width="20%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Format</b></font></font></p>
+		</td>
+		<td width="20%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Extension</b></font></font></p>
+		</td>
+		<td width="14%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Read</b></font></font></p>
+		</td>
+		<td width="14%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Write</b></font></font></p>
+		</td>
+		<td width="32%" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Notes</b></font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">DBF</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.dbf</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">CSV</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.csv</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">MsEXCEL</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.xls</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Shapefile
+			</font></font>
+			</p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.shp</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GML</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.gml</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">KML</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.kml</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">DXF
+			(Drawing Exchange Format)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.dxf</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">DWG
+			(D<span style="font-style: normal">rawing)</span></font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.dwg</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Supported
+			versions: 12, 13, 14, 15, 2004</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">DGN
+			(Design)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.dgn</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Supported
+			versions: 8</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">NetCDF
+			(Network Common Data Form)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.nc</font></font></p>
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.cdf</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Vectorial
+			and raster</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">ECW
+			(Enhanced Compression Wavelet)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.ecw</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">MrSID
+			(Multiresolution seamless image database)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.sid</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">IMG
+			</font></font>
+			</p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.img</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GIF
+			(Graphics Interchange Format)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.gif</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">TIFF
+			(Tagged Image File Format)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.tiff</font></font></p>
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.tif</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">JPEG
+			(Joint Photographic Experts Group)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.jpg</font></font></p>
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.jpeg</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">JPEG2000</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.jp2</font></font></p>
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.j2k</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">PNG
+			(Portable Network Graphics)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.png</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">ASCII</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.asc</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">RAW</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><br>
+			</p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Netpbm
+			format PPM (Portable pixmap format)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.ppm</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Netpbm
+			format PGM (Portable Graphic format)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.pgm</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Windows
+			Bitmap BMP</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.bmp</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">DAT
+			(ENVI)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.dat</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">LAN
+			(ERDAS)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.lan</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GIS
+			(ERDAS)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.gis</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">PIX
+			(PCI Geomatics)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.pix</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">AUX
+			(PCI Geomatics)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.aux</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">ADF
+			(ESRI Grids)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.adf</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">BSB
+			Nautical Chart KAP</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.kap</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Idrisi
+			Raster ERS</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.rst</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">TXT</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.txt</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="33" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">RMF
+			(raster matrix format)</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.rsw</font></font></p>
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.mtw</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">No</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="20%" height="32" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Ilwis
+			Raster Map MPL</font></font></p>
+		</td>
+		<td width="20%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">.mpl</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GDAL
+			raster file</font></font></p>
+		</td>
+	</tr>
+</table>
+<h2 class="western"><a name="__RefHeading__19410_1408063077"></a>13.2.
+Remote services</h2>
+<p class="western">Informative table of the remote services supported
+by gvSIG: 
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="125*">
+	<col width="131*">
+	<tr valign="top">
+		<td width="49%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Formato</b></font></font></p>
+		</td>
+		<td width="51%" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Notas</b></font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">WMS
+			(Web Map Service)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">v.1.1.0,
+			1.1.1, 1.3.0</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">WFS
+			(Web Feature Service)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">v.1.0.0,
+			1.1.0</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">WMTS
+			(Web Map Tile Service)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">WCS
+			(Web Coverage Service)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">v.1.0.0,
+			1.1.0</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">WMC
+			(Web Map Context)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left">It allows to save the parameters
+			of a WMS layer conection</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">CS-W
+			(Web Catalog Service)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left">v.0.9.0, 2.0.0, 2.0.1, 2.0.2</p>
+			<p class="western" align="left">Profiles ebRIM and ISO 19115/19139</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Z39.50
+			(Catalog)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">SRW
+			(Catalog)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left">Z39.50 in web</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">GAZ/WFS-G
+			(Gazetteer)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left">v.0.9.0, 0.9,1</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">ADL
+			(Gazetteer)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Geonames
+			(Gazetteer)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="49%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">OSM
+			(Open Street Map)</font></font></p>
+		</td>
+		<td width="51%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left"><br>
+			</p>
+		</td>
+	</tr>
+</table>
+<h2 class="western"><a name="__RefHeading__19412_1408063077"></a>13.3.
+Database</h2>
+<p class="western">Informative table of the databases  supported by
+gvSIG:</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="102*">
+	<col width="36*">
+	<col width="36*">
+	<col width="82*">
+	<tr valign="top">
+		<td width="40%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Formato</b></font></font></p>
+		</td>
+		<td width="14%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Lectura</b></font></font></p>
+		</td>
+		<td width="14%" style="border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Escritura</b></font></font></p>
+		</td>
+		<td width="32%" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western" align="center"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><b>Notas</b></font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="40%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">PostGIS
+			vectorial</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="40%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">PostGIS
+			raster</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="40%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">MySQL</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="40%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Oracle
+			Spatial / Locator connector</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Requires
+			manual installation of the Oracle proprietary libraries in gvSIG
+			to work.</font></font></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="40%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="left" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Database
+			connectors (Generic)</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="14%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<p class="western" align="center" style="font-weight: normal"><font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt">Yes</font></font></p>
+		</td>
+		<td width="32%" style="border-top: none; border-bottom: 1px solid #999999; border-left: 1px solid #999999; border-right: 1px solid #999999; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<p class="western" align="left" style="font-weight: normal"><br>
+			</p>
+		</td>
+	</tr>
+</table>
+<h2 class="western"><a name="__RefHeading___Toc88381_1335549477"></a>13.4.
+OGR</h2>
+<p class="western"><a name="result_box38"></a>The complete list of
+vector formats supported by OGR can be consulted here: 
+</p>
+<p class="western" style="font-variant: normal; font-style: normal; font-weight: normal; text-decoration: none">
+<span style="background: transparent">
+<font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><a class="western" href="http://www.gdal.org/ogr_formats.html">http://www.gdal.org/ogr_formats.html</a>
+</span></font></font>
+</p>
+</body>
+</html>

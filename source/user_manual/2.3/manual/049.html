@@ -1,0 +1,472 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="Mluz">
+	<meta name="created" content="20061115;190500000000000">
+	<meta name="changed" content="20170220;154612320000000">
+	<meta name="Info 1" content="">
+	<meta name="Info 2" content="">
+	<meta name="Info 3" content="">
+	<meta name="Info 4" content="">
+	<style type="text/css">
+	<!--
+		@page { margin-left: 3cm; margin-right: 1.95cm; margin-top: 1.27cm; margin-bottom: 1.27cm }
+		@page:first { margin-top: 1.27cm; margin-bottom: 2.5cm }
+		p { margin-top: 0.42cm; margin-bottom: 0cm; background: transparent; direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		p.western { font-family: "Myriad Pro", sans-serif; font-size: 10pt; font-weight: normal }
+		p.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: bold }
+		p.ctl { font-family: "Arial", sans-serif; font-size: 12pt; so-language: ar-SA; font-weight: bold }
+		h1 { margin-top: 0.42cm; margin-bottom: 0cm; direction: ltr; text-transform: uppercase; color: #4c4c4c; text-align: left; widows: 2; orphans: 2; page-break-before: always }
+		h1.western { font-family: "Myriad Pro"; font-size: 16pt }
+		h1.cjk { font-family: "Times New Roman", serif; font-size: 16pt }
+		h1.ctl { font-family: "Arial", sans-serif; font-size: 16pt; so-language: ar-SA }
+		h2 { margin-top: 0.4cm; margin-bottom: 0.3cm; direction: ltr; color: #ff950e; text-align: justify; page-break-inside: avoid; widows: 2; orphans: 2; page-break-before: auto }
+		h2.western { font-family: "Myriad Pro"; font-size: 14pt }
+		h2.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		h2.ctl { font-family: "Arial", sans-serif; font-size: 14pt; so-language: ar-SA }
+		pre { direction: ltr; color: #000000; text-align: justify; widows: 2; orphans: 2 }
+		pre.western { font-family: "DejaVu Sans Mono", monospace }
+		pre.cjk { font-family: "DejaVu Sans Mono", monospace }
+		pre.ctl { font-family: "DejaVu Sans Mono", monospace; so-language: ar-SA }
+		a:link { color: #0000ff }
+		a:visited { color: #800080 }
+		a.western:visited { so-language: en-GB }
+		a.cjk:visited { so-language: zxx }
+		a.ctl:visited { so-language: zxx }
+	-->
+	</style>
+</head>
+<body lang="en-GB" text="#000000" link="#0000ff" vlink="#800080" dir="ltr" style="background: transparent">
+<h2 class="western"><a name="__RefHeading__1012_10986595931112"></a>49.1.
+Introduction</h2>
+<p class="western">The command-line interface allows advanced users
+to increase their productivity and performe complex operations with
+simple scripts.</p>
+<p class="western">It is available from <i>“Tools/Geoprocessing/Command
+line”</i></p>
+<p class="western">The interface is:</p>
+<p class="western" align="center"><img src="data:image/png;base64,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" name="Imagen427" align="bottom" width="394" height="149" border="0"></p>
+<p class="western">The command-line interface is based on BeanShell.
+BeanShell is a Java source interpreter with object scripting language
+features, that meaning that it dynamically executes standard Java
+syntax and extends it with common scripting conveniences such as
+loose types, commands, and method closures like those in Perl and
+JavaScript. Several new commands have been added to it, so you can
+run geoalgorithms or get information about the geospatial data you
+are using, among other things. 
+</p>
+<h2 class="western"><a name="__RefHeading__5808_805484607"></a>49.2.
+Getting information about data</h2>
+<p class="western">Algorithms need data to run. Layers and tables are
+identified using the name they have in the table of contents of
+gvSIG. 
+</p>
+<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">The
+</span><tt><span lang="en-GB">data()</span></tt><span lang="en-GB">
+command prints a list of all data objects available to be used, along
+with the particular name of each one (i.e. the one you have to use to
+refer to it). Calling it you will get something like this: </span>
+</p>
+<pre class="western">RASTER LAYERS</pre>
+<pre class="western">-----------------</pre>
+<pre class="western">mdt25.asc</pre>
+<pre class="western"><br>
+</pre>
+<pre class="western">VECTOR LAYERS</pre>
+<pre class="western">-----------------</pre>
+<pre class="western">Contour lines</pre>
+<pre class="western"><br>
+</pre>
+<pre class="western">TABLES</pre>
+<pre class="western" style="margin-bottom: 0.5cm">-----------------</pre>
+<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">To
+get more information about a particular data object, use the
+</span><tt><span lang="en-GB">describe(name_of_data_object)</span></tt><span lang="en-GB">
+command. Here are a few examples of the result you will get when
+using it to get more information about a vector layer, a raster layer
+and a table. </span>
+</p>
+<p class="western" style="margin-bottom: 0.5cm"><br><br>
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*">
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western"><font size="1" style="font-size: 8pt">&gt;describe
+			points.shp</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Type:
+			Vector layer - Point</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Number of
+			entities: 300</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Table
+			fields: | ID | X | Y | SAND | SILT | CLAY | SOILTYPE | EXTRAPOLAT
+			|</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">&gt;describe
+			dem25.asc</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Type:
+			Raster layer </font>
+			</p>
+			<p class="western"><font size="1" style="font-size: 8pt">X min:
+			262846.525725</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">X max:
+			277871.525725</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Y min:
+			4454025.0</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Y max:
+			4464275.0</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Cellsize
+			X: 25.0</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Cellsize
+			Y: 0.0</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Rows: 410</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Cols: 601</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">&gt;describe
+			spatialCorrelation.dbf</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Type:
+			TableNumber of records: 156</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Table
+			fields: | Distance | I_Moran | c_Geary | Semivariance |</font></p>
+		</td>
+	</tr>
+</table>
+<h2 class="western"><a name="__RefHeading__5810_805484607"></a>49.3.
+Getting information about algorithms</h2>
+<p class="western">Once you know which data you have, it is time to
+know which algorithms are available and how to use them. 
+</p>
+<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">When
+you execute an algorithm using the toolbox, you use a parameters
+window with several fields, each one of them corresponding to a
+single parameter. When you use the command line interface, you must
+know which parameters are needed, so as to pass the right values to
+use to the method that runs that algorithm. Of course you do not have
+to memorize the requirements of all the algorithms, since SEXTANTE
+has a method to describe an algorithm in detail. But before we see
+that method, let's have a look at another one, the </span><tt><span lang="en-GB">algs()</span></tt><span lang="en-GB">
+method. It has no parameters, and it just prints a list of all the
+available algorithms. Here is a little part of that list as you will
+see it in your command-line shell. </span>
+</p>
+<p class="western"><br>
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*">
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western"><font size="1" style="font-size: 8pt">bsh %
+			algs();</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">acccost-------------------------------:
+			Accumulated cost(isotropic)</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">acccostanisotropic--------------------:
+			Accumulated cost (anisotropic)</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">acccostcombined-----------------------:
+			Accumulated cost (combined)</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">accflow-------------------------------:
+			Flow accumulation</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">acv-----------------------------------:
+			Anisotropic coefficient of variation</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">addeventtheme-------------------------:
+			Points layer from table</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">aggregate-----------------------------:
+			Aggregate</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">aggregationindex----------------------:
+			Aggregation index</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">ahp-----------------------------------:
+			Analytical Hierarchy Process (AHP)</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">aspect--------------------------------:
+			Aspect</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">buffer--------------------------------:
+			Buffer</font></p>
+		</td>
+	</tr>
+</table>
+<p class="western">On the left side of the list you will find the
+command-line name of each algorithm. This is the one you have to use
+to make a reference to the algorithm you want to use. On the right
+you find the name of the algorithm in the current language, which is
+the same name that identifies the algorithm in the toolbox. However,
+this name is not constant, since it depends on the current language,
+and thus cannot be used to call the algorithm. Instead, a
+command-line is needed.</p>
+<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">Now,
+let's see how to get a list of the parameters that an algorithms
+require and the outputs that it will generate. To do it, you can use
+the </span><tt><span lang="en-GB">describealg(name_of_the_algorithm)</span></tt><span lang="en-GB">
+method. Use the command-line name of the algorithm, not the full
+descriptive name. </span>
+</p>
+<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">For
+example, if we want to calculate a flow accumulation layer from a
+DEM, we will need to execute the corresponding module, which,
+according to the list show using the </span><tt><span lang="en-GB">ags()</span></tt><span lang="en-GB">
+method, is identified as </span><tt><span lang="en-GB">accflow</span></tt><span lang="en-GB">.
+The following is a description of its inputs and outputs. </span>
+</p>
+<pre class="western"><br>
+</pre>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*">
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western"><font size="1" style="font-size: 8pt">&gt;describealg(&quot;accflow&quot;)</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Usage:
+			accflow(DEM[Raster Layer]</font></p>
+			<p class="western">               <font size="1" style="font-size: 8pt">WEIGHTS[Optional
+			Raster Layer]</font></p>
+			<p class="western">               <font size="1" style="font-size: 8pt">METHOD[Selection]</font></p>
+			<p class="western">               <font size="1" style="font-size: 8pt">CONVERGENCE[Numerical
+			Value]</font></p>
+			<p class="western">               <font size="1" style="font-size: 8pt">FLOWACC
+			[output raster layer])</font></p>
+		</td>
+	</tr>
+</table>
+<h2 class="western"><a name="__RefHeading__5812_805484607"></a>49.4.
+Running an algorithm</h2>
+<p class="western">There is only one single command to execute
+algorithms: <tt>runalg</tt>. Its syntax is as follows: 
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*">
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western"><font size="1" style="font-size: 8pt">&gt;
+			runalg{name_of_the_algorithm, param1, param2, ..., paramN)</font></p>
+		</td>
+	</tr>
+</table>
+<p class="western">The list of parameters to add depends on the
+algorithm you want to run, and is exactly the list that the
+<tt>describealg</tt> method gives you, in the same order as shown. 
+</p>
+<p class="western" style="margin-bottom: 0.5cm">Depending on the type
+of parameter, values are introduced differently. The next one is a
+quick review of how to introduce values for each type of input
+parameter 
+</p>
+<p class="western" style="margin-bottom: 0.5cm">If the input is
+optional and you do not want to use any data object, write ``#''</p>
+<ul>
+	<li><p class="western">Raster Layer, Vector Layer or Table. Simply
+	introduce the name that identifies the data object to use. I. 
+	</p>
+	<li><p class="western">Numerical value. Directly type the value to
+	use or the name of a variable containing that value. 
+	</p>
+	<li><p class="western"><span lang="en-GB">Selection. Type the number
+	that identifies the desired option, as shown by the </span><tt><span lang="en-GB">options</span></tt><span lang="en-GB">
+	command </span>
+	</p>
+	<li><p class="western">String. Directly type the string to use or
+	the name of a variable containing it. 
+	</p>
+	<li><p class="western">Boolean. Type whether ``true'' or ``false''
+	(including quotes) 
+	</p>
+	<li><p class="western" style="margin-bottom: 0.5cm">Multiple
+	selection-data_type. Type the list of objects to use, separated by
+	commas and enclosed between quotes. 
+	</p>
+	<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">For
+	example, for the </span><tt><span lang="en-GB">maxvaluegrid</span></tt><span lang="en-GB">
+	algorithm: </span>
+	</p>
+</ul>
+<div align="right">
+	<table width="559" cellpadding="4" cellspacing="0">
+		<col width="549">
+		<tr>
+			<td width="549" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+				<p class="western"><font size="1" style="font-size: 8pt">Usage:
+				runalg(&quot;maxvaluegrid&quot;,</font></p>
+				<p class="western">                   <font size="1" style="font-size: 8pt">INPUT[Multiple
+				Input - Raster Layer]</font></p>
+				<p class="western">                   <font size="1" style="font-size: 8pt">NODATA[Boolean],</font></p>
+				<p class="western">                   <font size="1" style="font-size: 8pt">RESULT[Output
+				raster layer])</font></p>
+			</td>
+		</tr>
+	</table>
+</div>
+<p class="western">	The next line shows a valid use example 
+</p>
+<div align="right">
+	<table width="559" cellpadding="4" cellspacing="0">
+		<col width="549">
+		<tr>
+			<td width="549" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+				<p class="western"><font size="1" style="font-size: 8pt">&gt;
+				runalg(&quot;maxvaluegrid&quot;, &quot;lyr1, lyr2, lyr3&quot;,
+				&quot;false&quot;, &quot;#&quot;)</font></p>
+			</td>
+		</tr>
+	</table>
+</div>
+<p class="western">	Of course, lyr1, lyr2 and lyr3 must be valid
+layers already loaded into your GIS. 
+</p>
+<ul>
+	<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">When
+	the multiple input is comprised of raster bands, each element is
+	represented by a pair of values (layer, band). For example, for the
+	</span><tt><span lang="en-GB">cluster</span></tt><span lang="en-GB">
+	algorithm </span>
+	</p>
+</ul>
+<div align="right">
+	<table width="559" cellpadding="4" cellspacing="0">
+		<col width="549">
+		<tr>
+			<td width="549" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+				<p class="western"><font size="1" style="font-size: 8pt">Usage:
+				runalg( &quot;cluster&quot;,</font></p>
+				<p class="western">               <font size="1" style="font-size: 8pt">INPUT[Multiple
+				Input - Band],</font></p>
+				<p class="western">               <font size="1" style="font-size: 8pt">NUMCLASS[Numerical
+				Value],</font></p>
+				<p class="western">               <font size="1" style="font-size: 8pt">RESULTLAYER[output
+				raster layer],</font></p>
+				<p class="western">               <font size="1" style="font-size: 8pt">RESULTTABLE[output
+				table],</font></p>
+				<p class="western">               <font size="1" style="font-size: 8pt">);</font></p>
+			</td>
+		</tr>
+	</table>
+</div>
+<p class="western">	A valid example is:</p>
+<div align="right">
+	<table width="559" cellpadding="4" cellspacing="0">
+		<col width="549">
+		<tr>
+			<td width="549" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+				<p class="western"><font size="1" style="font-size: 8pt">&gt;
+				runalg(&quot;cluster, &quot;lyr1, 1, lyr1, 2, lyr2, 2&quot;, 5,
+				&quot;#&quot;, &quot;#&quot;)</font></p>
+			</td>
+		</tr>
+	</table>
+</div>
+<p class="western">	The algorithm will use three bands, two of them
+from lyr1 (the first and the second ones of that layer) and one from
+lyr2 (its second band). 
+</p>
+<ul>
+	<li><p class="western">Table Field from XXX. Write the name of the
+	field to use. This parameter is case-sensitive. 
+	</p>
+	<li><p class="western" style="margin-bottom: 0.5cm">Fixed Table.
+	Type the list of all table values separated by commas and enclosed
+	between quotes. Values start on the upper row and go from left to
+	right. Here is an example: 
+	</p>
+</ul>
+<div align="right">
+	<table width="559" cellpadding="4" cellspacing="0">
+		<col width="549">
+		<tr>
+			<td width="549" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+				<p class="western"><font size="1" style="font-size: 8pt">runalg(&quot;kernelfilter&quot;,
+				mdt25.asc, &quot;-1, -1, -1, -1, 9, -1, -1, -1, -1&quot;, &quot;#&quot;)</font></p>
+			</td>
+		</tr>
+	</table>
+</div>
+<ul>
+	<li><p class="western">Point . The two coordinates must be separated
+	with a comma and in quotes. Example: ''220345, 4453616'' 
+	</p>
+</ul>
+<p class="western">Input parameters such as strings or numerical
+values have default values. To use them, type ``#'' in the
+corresponding parameter entry instead of a value expression. 
+</p>
+<p class="western" style="margin-bottom: 0.5cm">For output data
+objects, type the filepath to be used to save it, just as it is done
+from the toolbox. If you want to save the result to a temporary file,
+type ``#''. If you want to save the output to a permanent file, type
+the output file.</p>
+<h2 class="western"><a name="__RefHeading__5814_805484607"></a>49.5.
+Running a model</h2>
+<p class="western">Models can be executed from the command-line using
+the <tt>model</tt> command, which has a sintax similar to the <tt>runalg</tt>
+command. In this case, you must use the file name where the model is
+stored instead of the name of the algorithm as the first parameters.
+The remaining parameters depend on the particular model you want to
+execute, much like in the case of running a simple algorithm with the
+<tt>runalg</tt> command. 
+</p>
+<h2 class="western"><a name="__RefHeading__21503_839322773"></a><a name="SECTION00770000000000000000"></a>
+49.6. Managing layers from the command-line interface 
+</h2>
+<p class="western" style="margin-bottom: 0.5cm">You can perform some
+operation with layers from the command-line interface, like the
+following ones: 
+</p>
+<ul>
+	<li><p class="western"><span lang="en-GB">Close a layer. Use the
+	</span><tt><span lang="en-GB">close(layer_name)</span></tt><span lang="en-GB">
+	command. </span>
+	</p>
+	<li><p class="western"><span lang="en-GB">Change the no-data value
+	of a raster layer. Use the </span><tt><span lang="en-GB">setnodata(layer_name,
+	new_value)</span></tt><span lang="en-GB"> command </span>
+	</p>
+	<li><p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">Change
+	the name of a layer. Use the </span><tt><span lang="en-GB">rename(layer_name,
+	new_layer_name)</span></tt><span lang="en-GB"> command </span>
+	</p>
+</ul>
+<h2 class="western"><a name="__RefHeading__21505_839322773"></a><a name="SECTION00750000000000000000"></a>
+49.7. Adjusting output raster characteristics 
+</h2>
+<p class="western" style="margin-bottom: 0.5cm">Just like when you
+execute a geoalgorithm from the toolbox, when it generates new raster
+layers you have to define the extent and cell size of those layers. 
+</p>
+<p class="western" style="margin-bottom: 0.5cm"><span lang="en-GB">By
+default, those characteristics are defined based on the input layers.
+You can toggle this behaviour using the </span><tt><span lang="en-GB">autoextent</span></tt><span lang="en-GB">
+command. </span>
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*">
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western"><font size="1" style="font-size: 8pt">&gt;
+			autoextent(&quot;true&quot;/&quot;false)</font></p>
+		</td>
+	</tr>
+</table>
+<p class="western">By default, it has a true value. However, iif you
+want to set a concrete extent and cell size for all the output raster
+layers, you should use the extent command:</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*">
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #999999; padding: 0.1cm">
+			<p class="western"><font size="1" style="font-size: 8pt">Usage:
+			extent(raster layer[string])</font></p>
+			<p class="western">       <font size="1" style="font-size: 8pt">extent(vector
+			layer[string], cellsize[double])</font></p>
+			<p class="western">       <font size="1" style="font-size: 8pt">extent(x
+			min[double], y min[double],</font></p>
+			<p class="western">              <font size="1" style="font-size: 8pt">x
+			max[double], y max[double], </font>
+			</p>
+			<p class="western">              <font size="1" style="font-size: 8pt">cell
+			size[double])</font></p>
+			<p class="western"><font size="1" style="font-size: 8pt">Type
+			&quot;autoextent&quot; to use automatic extent fitting when
+			possible</font></p>
+		</td>
+	</tr>
+</table>
+<p lang="en-US" class="western" style="margin-bottom: 0.5cm; font-variant: normal; font-style: normal; font-weight: normal; text-decoration: none">
+<font face="Myriad Pro, sans-serif"><font size="2" style="font-size: 10pt"><span style="background: transparent">When
+a fixed extension has been set, automatically the autoextent will be
+deactivated (similar to execute a false autoextent).</span></font></font></p>
+</body>
+</html>

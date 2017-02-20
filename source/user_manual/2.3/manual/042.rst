@@ -1,0 +1,6 @@
+
+gvSIG Geoprocesses. Raster layers
+==================================
+
+.. raw:: html
+    :file: 042.html

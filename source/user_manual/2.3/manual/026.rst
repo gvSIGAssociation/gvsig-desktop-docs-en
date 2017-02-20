@@ -1,0 +1,6 @@
+
+Graphic editing tools
+===============================
+
+.. raw:: html
+    :file: 026.html
